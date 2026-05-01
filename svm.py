@@ -106,7 +106,7 @@ scaler = StandardScaler().fit(X_train)
 X_train_s = scaler.transform(X_train)
 X_test_s = scaler.transform(X_test)
 
-model = SVM(lr=0.001, cost=1000, epoch=1000)
+model = SVM(lr=0.001, cost=1, epoch=1000)
 model.fit(X_train_s, y_train)
 
 print(f"Train acc: {model.accuracy(X_train_s, y_train):.3f}")
@@ -115,7 +115,7 @@ print(f"||w|| = {np.linalg.norm(model.w):.3f}  (margin width = {2/np.linalg.norm
 # print(f"Decision function: {model.decision_function(X_train_s)}" )
 
 plot_svm(model, X_train_s, y_train, title='Train')
-plot_svm(model, X_test_s, y_test,title='Test')
+# plot_svm(model, X_test_s, y_test,title='Test')
 
 
 # ========== KERNEL ON NON-LINEAR DATA ==========
