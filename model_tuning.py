@@ -53,7 +53,7 @@ def kfold_tune(model_class, param_grid, X, y, k=5, random_state=42):
     N = len(y)
     idx = np.random.permutation(N)
 
-    # 1. splitting into K folds = list of k size arrays
+    # 1. splitting into K folds = list of k개 arrays
     folds = np.array_split(idx, k)
     keys = list(param_grid.keys())
     values = list(param_grid.values())
@@ -131,3 +131,4 @@ final_model = LogisticRegression(**best_params_k)
 final_model.fit(X_trainval, y_trainval)
 test_acc = final_model.accuracy(X_test, y_test)
 print(f"\nFinal test accuracy: {test_acc:.3f}")
+
