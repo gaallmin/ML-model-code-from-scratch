@@ -78,11 +78,11 @@ W_true = np.abs(np.random.randn(V, K_true))
 H_true = np.abs(np.random.randn(K_true, N))
 X = W_true @ H_true + 3.0 * np.abs(np.random.randn(V, N))
 
-# Trying negative value
-X_neg = X - 5.0   # shift to include negatives
-model_neg = NMF(K=3)
-model_neg.fit(X_neg)
-print(model_neg.loss_history[-1])  # does it converge?
+# # === Trying negative value ===
+# X_neg = X - 5.0   # shift to include negatives
+# model_neg = NMF(K=3)
+# model_neg.fit(X_neg)
+# print(model_neg.loss_history[-1]) 
 
 # # === ONE K == 
 # model = NMF(K=10, n_iter=500, tolerance=1e-10)
